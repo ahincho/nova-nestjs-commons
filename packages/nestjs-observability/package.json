@@ -1,0 +1,70 @@
+{
+  "name": "@nova/nestjs-observability",
+  "version": "1.0.0",
+  "description": "Módulo NestJS de observabilidad con OpenTelemetry para el ecosistema Nova Platform — Four Golden Signals, trazas distribuidas, correlación de logs y exportación OTLP",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "node -e \"const fs=require('fs');fs.rmSync('dist',{recursive:true,force:true})\"",
+    "prepublishOnly": "npm run clean && npm run build",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "docs": "typedoc"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nova/nova-commons-nestjs.git"
+  },
+  "keywords": [
+    "nova",
+    "nestjs",
+    "observability",
+    "opentelemetry",
+    "golden-signals",
+    "metrics",
+    "traces",
+    "logs"
+  ],
+  "license": "UNLICENSED",
+  "peerDependencies": {
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/core": "^11.0.0",
+    "@nestjs/terminus": "^11.0.0",
+    "rxjs": "^7.0.0",
+    "reflect-metadata": "^0.2.0",
+    "@nova/observability-utils": "^1.0.0"
+  },
+  "dependencies": {
+    "@opentelemetry/api": "^1.9.0",
+    "@opentelemetry/api-logs": "^0.209.0",
+    "@opentelemetry/sdk-node": "^0.209.0",
+    "@opentelemetry/sdk-metrics": "^2.0.0",
+    "@opentelemetry/sdk-logs": "^0.209.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.67.0",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.209.0",
+    "@opentelemetry/exporter-logs-otlp-http": "^0.209.0",
+    "@opentelemetry/exporter-metrics-otlp-http": "^0.209.0",
+    "@opentelemetry/resources": "^2.0.0",
+    "@opentelemetry/semantic-conventions": "^1.38.0"
+  },
+  "devDependencies": {
+    "@nova/observability-utils": "file:../../../nova-observability-utils",
+    "@nova/nestjs-parent": "file:../../../nova-nestjs-parent",
+    "@nestjs/common": "~11.1.19",
+    "@nestjs/core": "~11.1.19",
+    "@nestjs/terminus": "~11.0.0",
+    "rxjs": "~7.8.1",
+    "reflect-metadata": "~0.2.2",
+    "typescript": "~6.0.3",
+    "@types/node": ">=22.0.0"
+  }
+}

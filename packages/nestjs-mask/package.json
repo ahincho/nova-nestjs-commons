@@ -1,0 +1,52 @@
+{
+  "name": "@nova/nestjs-mask",
+  "version": "1.0.0",
+  "description": "Módulo NestJS de enmascaramiento automático de datos sensibles para el ecosistema Nova Platform",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "node -e \"const fs=require('fs');fs.rmSync('dist',{recursive:true,force:true})\"",
+    "prepublishOnly": "npm run clean && npm run build",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "jest --run-in-band",
+    "test:cov": "jest --run-in-band --coverage",
+    "docs": "typedoc"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nova/nova-commons-nestjs.git"
+  },
+  "keywords": [
+    "nova",
+    "nestjs",
+    "mask",
+    "interceptor",
+    "sensitive-data"
+  ],
+  "license": "UNLICENSED",
+  "peerDependencies": {
+    "@nova/mask-utils": "^1.0.0",
+    "@nestjs/core": "^11.0.0",
+    "@nestjs/common": "^11.0.0",
+    "rxjs": "^7.0.0",
+    "reflect-metadata": "^0.2.0"
+  },
+  "devDependencies": {
+    "@nova/mask-utils": "file:../../../nova-mask-utils",
+    "@nova/nestjs-parent": "file:../../../nova-nestjs-parent",
+    "@nestjs/core": "~11.0.0",
+    "@nestjs/common": "~11.0.0",
+    "rxjs": "~7.8.1",
+    "reflect-metadata": "~0.2.2"
+  }
+}

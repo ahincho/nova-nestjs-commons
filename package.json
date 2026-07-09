@@ -1,0 +1,30 @@
+{
+  "name": "@ahincho/commons-nestjs",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "npm@11.6.1",
+  "description": "Monorepo de starters comunes NestJS para el ecosistema Nova Platform",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "docs": "turbo run docs"
+  },
+  "keywords": [
+    "nova",
+    "nestjs",
+    "commons",
+    "monorepo"
+  ],
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@ahincho/nestjs-parent": "file:../nova-nestjs-parent",
+    "turbo": "~2.5.0"
+  }
+}
